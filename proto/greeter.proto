@@ -1,0 +1,17 @@
+syntax = "proto3";
+option go_package = ".;proto";
+
+
+message Request {
+  int32 Page = 1;
+  int32 Size = 2;
+}
+message Response {
+  int64 Code = 200;
+  string Content = 1;
+}
+
+
+service Greeter {
+  rpc GetResult(Request) returns (Response) {}
+}
